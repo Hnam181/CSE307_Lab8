@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Date Picker Example</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <style>
+    /* Optional: Add some styling to the datepicker */
+    .ui-datepicker {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Your standard form input field -->
+<input type="text" id="datepickerInput" placeholder="Select a date">
+
+<script>
+  $(document).ready(function() {
+    // Initialize the datepicker
+    $('#datepickerInput').datepicker({
+      showOn: "button",  // Show a button trigger next to the input field
+      buttonImage: "https://jqueryui.com/resources/demos/datepicker/images/calendar.gif",  // Set the calendar icon
+      buttonImageOnly: true,  // Show only the calendar icon
+      buttonText: "Select date",  // Tooltip for the button
+      dateFormat: "mm/dd/yy",  // Specify the date format
+      onSelect: function(dateText, inst) {
+        // Optional: You can add custom logic when a date is selected
+        console.log("Selected date: " + dateText);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
